@@ -1,19 +1,20 @@
+set nocompatible
 filetype off
 """ pathogen をコメントアウト
 " call pathogen#runtime_append_all_bundles()
 " call pathogen#helptags()
 " set helpfile=$VIMRUNTIME/doc/help.txt
  
-""" Vundle '''
-set rtp+=~/.vim/vundle/
-call vundle#rc()
-filetype plugin on
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
 
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'ZenCoding.vim'
-Bundle 'tpope/vim-rails'
+NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'ZenCoding.vim'
+NeoBundle 'tpope/vim-rails'
 
 " unite.vim
 " 入力モードで開始する
