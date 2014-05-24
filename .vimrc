@@ -10,7 +10,7 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
-NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'ZenCoding.vim'
@@ -46,6 +46,9 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
 let twitvim_browser_cmd = 'firefox'
+
+" enable neocomplecache
+let g:neocomplcache_enable_at_startup = 1
 
 set shiftwidth=2
 set tabstop=2
