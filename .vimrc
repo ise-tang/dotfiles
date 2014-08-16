@@ -17,6 +17,7 @@ NeoBundle 'ZenCoding.vim'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'scrooloose/nerdtree'
 
 " unite.vim
 " 入力モードで開始する
@@ -34,6 +35,8 @@ nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
+" Open NERDTRee
+nnoremap <silent> ,nt :<C-u>NERDTree<CR>
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
@@ -65,3 +68,4 @@ set number
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+NeoBundleCheck
