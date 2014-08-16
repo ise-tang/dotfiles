@@ -15,6 +15,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'ZenCoding.vim'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'thoughtbot/vim-rspec'
 
 " unite.vim
 " 入力モードで開始する
@@ -47,12 +49,19 @@ autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
 let twitvim_browser_cmd = 'firefox'
 
+" for rspec-vim
+let g:rspec_command = "Dispatch rspec {spec}"
+nnoremap <silent> ,rc :call RunCurrentSpecFile()<CR>
+
 " enable neocomplecache
 let g:neocomplcache_enable_at_startup = 1
 
 set shiftwidth=2
 set tabstop=2
 set expandtab
+set autoindent
+set number
 
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
