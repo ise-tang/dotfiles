@@ -10,6 +10,8 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
+NeoBundle 'tomasr/molokai'
+NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'kchmck/vim-coffee-script'
@@ -24,6 +26,10 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_echo_current_error = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_enable_highlighting = 1
+NeoBundle 'nathanaelkane/vim-indent-guides'
+" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
+colorscheme molokai
+let g:indent_guides_enable_on_vim_startup = 1
 
 " unite.vim
 " 入力モードで開始する

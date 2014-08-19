@@ -102,7 +102,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PATH=$PATH:~/android-sdk/sdk/platform-tools:~/android-studio/bin:~/Downloads/jdk1.7.0_67/bin
+PATH=$PATH:~/android-sdk/sdk/platform-tools:~/android-studio/bin
 # $HOME/sandbox/nave/nave.sh use latest
 JAVA_HOME=/usr/lib/jvm/jdk1.7.0/
 
