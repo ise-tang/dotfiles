@@ -21,16 +21,22 @@ NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle "altercation/vim-colors-solarized"
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_echo_current_error = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_enable_highlighting = 1
-NeoBundle 'nathanaelkane/vim-indent-guides'
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-colorscheme molokai
-let g:indent_guides_enable_on_vim_startup = 1
+"NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Yggdroot/indentLine'
 
+let g:solarized_termcolors=256
+set t_Co=256
+set t_Sf=[3%dm
+set t_Sb=[4%dm
+syntax on
+colorscheme molokai
+set background=dark
 " unite.vim
 " 入力モードで開始する
 " let g:unite_enable_start_insert=1
@@ -79,5 +85,6 @@ set number
 
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set list listchars=tab:\¦\ 
 
 NeoBundleCheck
