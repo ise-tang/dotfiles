@@ -116,3 +116,16 @@ shopt -u histappend
 export HISTSIZE=9999
 
 alias w3m='w3m -o display_image=true'
+
+case "${OSTYPE}" in
+darwin*)
+  alias ls="ls -G"
+  alias ll="ls -lG"
+  alias la="ls -laG"
+  ;;
+linux*)
+  alias ls='ls --color'
+  alias ll='ls -l --color'
+  alias la='ls -la --color'
+  ;;
+esac
