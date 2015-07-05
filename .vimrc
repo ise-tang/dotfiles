@@ -30,13 +30,13 @@ let g:syntastic_enable_highlighting = 1
 "NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Yggdroot/indentLine'
 
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 set t_Co=256
 set t_Sf=[3%dm
 set t_Sb=[4%dm
-syntax on
-colorscheme solarized
+syntax enable
 set background=dark
+colorscheme solarized
 " unite.vim
 " 入力モードで開始する
 " let g:unite_enable_start_insert=1
