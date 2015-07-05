@@ -35,7 +35,7 @@ set t_Co=256
 set t_Sf=[3%dm
 set t_Sb=[4%dm
 syntax on
-colorscheme molokai
+colorscheme solarized
 set background=dark
 " unite.vim
 " 入力モードで開始する

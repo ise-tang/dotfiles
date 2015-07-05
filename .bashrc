@@ -129,3 +129,8 @@ linux*)
   alias la='ls -la --color'
   ;;
 esac
+
+NODE_PATH='/usr/lib/node_modules'
+
+# RVM
+[ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
