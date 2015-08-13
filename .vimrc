@@ -7,7 +7,7 @@ filetype off
  
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  call neobundle#begin(expand('~/.vim/bundle/'))
 endif
 
 NeoBundle 'tomasr/molokai'
@@ -29,6 +29,8 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_enable_highlighting = 1
 "NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Yggdroot/indentLine'
+
+call neobundle#end()
 
 "let g:solarized_termcolors=256
 set t_Co=256
