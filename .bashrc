@@ -137,3 +137,7 @@ NODE_PATH='/usr/lib/node_modules'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+eval "$(rbenv init -)"
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
