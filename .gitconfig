@@ -3,5 +3,9 @@
 [core]
 	editor = vim
 [user]
-	email = isseeei@gmail.com
+	email = issei.nakamura@peroli.jp
 	name = issei126
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
