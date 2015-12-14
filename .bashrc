@@ -147,7 +147,10 @@ export LD_LIBRARY_PATH=/usr/local/kakasi/lib:/usr/local/marisa/lib
 
 source ~/.git-completion.bash
 
-alias readlink='greadlink'
+if [ "$(uname)" == 'Darwin' ]; then
+  alias readlink='greadlink'
+fi
+
 if [[ $TMUX ]]; then source ~/.tmux-git/tmux-git.sh; fi
 
 export GOPATH=$HOME/go
