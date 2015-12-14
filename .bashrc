@@ -149,3 +149,5 @@ source ~/.git-completion.bash
 
 alias readlink='greadlink'
 if [[ $TMUX ]]; then source ~/.tmux-git/tmux-git.sh; fi
+
+export GOPATH=$HOME/go
