@@ -149,8 +149,11 @@ source ~/.git-completion.bash
 
 if [ "$(uname)" == 'Darwin' ]; then
   alias readlink='greadlink'
+  alias git='hub'
 fi
 
 if [[ $TMUX ]]; then source ~/.tmux-git/tmux-git.sh; fi
 
 export GOPATH=$HOME/go
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages/:$PYTHONPATH"
+export PATH=./bin:$PATH

@@ -1,44 +1,71 @@
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('.vim'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('tomasr/molokai')
+call dein#add('ujihisa/unite-colorscheme')
+call dein#add('Shougo/neocomplcache')
+call dein#add('Shougo/unite.vim'))
+call dein#add('kchmck/vim-coffee-script')
+call dein#add('ZenCoding.vim')
+call dein#add('tpope/vim-rails')
+call dein#add('tpope/vim-dispatch')
+call dein#add('thoughtbot/vim-rspec')
+call dein#add('scrooloose/nerdtree')
+call dein#add('scrooloose/syntastic')
+call dein#add('vim-scripts/taglist.vim')
+call dein#add("altercation/vim-colors-solarized")
+call dein#add("kana/vim-smartinput")
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('thinca/vim-quickrun' )
+call dein#add('Yggdroot/indentLine')
+call dein#add('elzr/vim-json')
+"call dein#add('vim-endwise')
+
+" You can specify revision/branch/tag.
+call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+
+"If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
 set nocompatible
 filetype off
 """ pathogen をコメントアウト
 " call pathogen#runtime_append_all_bundles()
 " call pathogen#helptags()
 " set helpfile=$VIMRUNTIME/doc/help.txt
- 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle/'))
-endif
 
-NeoBundle 'tomasr/molokai'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'ZenCoding.vim'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'thoughtbot/vim-rspec'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle "altercation/vim-colors-solarized"
-NeoBundle "kana/vim-smartinput"
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'thinca/vim-quickrun' 
-" NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'Yggdroot/indentLine'
-
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_echo_current_error = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_enable_highlighting = 1
+let g:syntastic_mode_map = { 'mode': 'active_filetypes',
+            \ 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
-
-call neobundle#end()
 
 " indentLine
 let g:indentLine_color_term = 111
@@ -153,4 +180,5 @@ if has('syntax')
     call ZenkakuSpace()
 endif
 
-NeoBundleCheck
+"for json quotation visible"
+let g:vim_json_syntax_conceal = 0
