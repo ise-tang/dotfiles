@@ -6,7 +6,7 @@ endif
 set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('.vim'))
+call dein#begin(expand('~/.vim'))
 
 " Let dein manage dein
 " Required:
@@ -18,7 +18,7 @@ call dein#add('Shougo/neosnippet-snippets')
 call dein#add('tomasr/molokai')
 call dein#add('ujihisa/unite-colorscheme')
 call dein#add('Shougo/neocomplcache')
-call dein#add('Shougo/unite.vim'))
+call dein#add('Shougo/unite.vim')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('ZenCoding.vim')
 call dein#add('tpope/vim-rails')
@@ -34,7 +34,8 @@ call dein#add('Shougo/neosnippet-snippets')
 call dein#add('thinca/vim-quickrun' )
 call dein#add('Yggdroot/indentLine')
 call dein#add('elzr/vim-json')
-"call dein#add('vim-endwise')
+call dein#add('tpope/vim-endwise')
+call dein#add('jreybert/vimagit')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
