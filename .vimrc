@@ -35,7 +35,6 @@ call dein#add('thinca/vim-quickrun' )
 call dein#add('Yggdroot/indentLine')
 call dein#add('elzr/vim-json')
 call dein#add('tpope/vim-endwise')
-call dein#add('jreybert/vimagit')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -183,3 +182,7 @@ endif
 
 "for json quotation visible"
 let g:vim_json_syntax_conceal = 0
+
+set foldmethod=indent
+set foldlevel=3
+set foldcolumn=3

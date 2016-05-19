@@ -157,3 +157,6 @@ if [[ $TMUX ]]; then source ~/.tmux-git/tmux-git.sh; fi
 export GOPATH=$HOME/go
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages/:$PYTHONPATH"
 export PATH=./bin:$PATH
+
+# for direnv
+eval "$(direnv hook bash)"
