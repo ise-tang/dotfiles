@@ -160,3 +160,6 @@ export PATH=./bin:$PATH
 
 # for direnv
 eval "$(direnv hook bash)"
+
+stty stop undef
+stty start undef
