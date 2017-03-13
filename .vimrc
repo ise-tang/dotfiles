@@ -18,7 +18,6 @@ call dein#add('tomasr/molokai')
 call dein#add('ujihisa/unite-colorscheme')
 call dein#add('Shougo/neocomplete')
 call dein#add('Shougo/unite.vim')
-call dein#add('kchmck/vim-coffee-script')
 call dein#add('ZenCoding.vim')
 call dein#add('tpope/vim-rails')
 call dein#add('tpope/vim-dispatch')
@@ -37,7 +36,8 @@ call dein#add('Shougo/vimshell.vim')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('tpope/vim-fugitive')
 call dein#add('cohama/lexima.vim')
-
+call dein#add('osyo-manga/vim-monster')
+call dein#add('tpope/vim-surround') 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
@@ -202,6 +202,7 @@ call lexima#init()
 call lexima#add_rule({'char': '(', 'at': '\%#.', 'delete':1})
 call lexima#add_rule({'char': '[', 'at': '\%#.', 'delete':1})
 call lexima#add_rule({'char': '{', 'at': '\%#.', 'delete':1})
+call lexima#add_rule({'char': '"', 'at': '\%#.', 'delete':1})
 
 " neocomplete settings
 " Disable AutoComplPop.
@@ -265,7 +266,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+  let g:neocomplete#sources#omni#input_patterns = {
+        \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+        \}
 endif
 "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
@@ -275,4 +278,25 @@ endif
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
+" Set tabline.
+function! MyTabLine()  "{{{
+  let s = ''
+  for i in range(1, tabpagenr('$'))
+    let bufnrs = tabpagebuflist(i)
+    let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
+    let no = i  " display 0-origin tabpagenr.
+    let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
+    let title = pathshorten(fnamemodify(bufname(bufnr), ':p:~'))
+    let title = '[' . title . ']'
+    let s .= '%'.i.'T'
+    let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
+    let s .= no . ':' . title
+    let s .= mod
+    let s .= '%#TabLineFill# '
+  endfor
+  let s .= '%#TabLineFill#%T%=%#TabLine#'
+  return s
+endfunction "}}}
+set tabline=%!MyTabLine()
+set showtabline=2 " 常にタブラインを表示
 
