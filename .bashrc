@@ -157,9 +157,12 @@ if [[ $TMUX ]]; then source ~/.tmux-git/tmux-git.sh; fi
 export GOPATH=$HOME/go
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages/:$PYTHONPATH"
 export PATH=./bin:$PATH
+export PATH="$PATH:`pwd`/flutter/bin"
+export PATH="$PATH":"$HOME/sandbox/flutter/.pub-cache/bin"
 
 # for direnv
 eval "$(direnv hook bash)"
+eval "$(nodenv init -)"
 
 stty stop undef
 stty start undef

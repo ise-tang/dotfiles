@@ -152,6 +152,7 @@ set tabstop=2
 set expandtab
 set autoindent
 set number
+set ambiwidth=double
 
 set list
 set listchars=tab:»-,trail:_,eol:↲,extends:»,precedes:«,nbsp:%
