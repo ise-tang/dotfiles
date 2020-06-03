@@ -9,7 +9,7 @@ mv ~/{,.}git-completion.bash
 
 git clone https://github.com/drmad/tmux-git.git ~/.tmux-git
 
-dotfiles=(".vimrc" ".bashrc" ".gitconfig" ".tmux.conf" ".zshrc" ".zshenv")
+dotfiles=(".gvimrc" ".vimrc" ".bashrc" ".gitconfig" ".tmux.conf" ".zshrc" ".zshenv")
 
 for i in "${dotfiles[@]}"
 do

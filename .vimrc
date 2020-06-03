@@ -18,7 +18,7 @@ call dein#add('tomasr/molokai')
 call dein#add('ujihisa/unite-colorscheme')
 call dein#add('Shougo/neocomplete')
 call dein#add('Shougo/unite.vim')
-call dein#add('ZenCoding.vim')
+call dein#add('vim-scripts/ZenCoding.vim')
 call dein#add('tpope/vim-rails')
 call dein#add('tpope/vim-dispatch')
 call dein#add('thoughtbot/vim-rspec')
@@ -40,6 +40,8 @@ call dein#add('osyo-manga/vim-monster')
 call dein#add('tpope/vim-surround') 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+autocmd ColorScheme * highlight lineNr guifg=#b0b0b0
 
 " Required:
 call dein#end()

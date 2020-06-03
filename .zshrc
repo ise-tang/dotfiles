@@ -120,7 +120,7 @@ NODE_PATH='/usr/lib/node_modules'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -133,7 +133,10 @@ export PATH=./bin:$PATH
 export PATH="$PATH:`pwd`/flutter/bin"
 export PATH="$PATH":"$HOME/sandbox/flutter/.pub-cache/bin"
 
-eval "$(nodenv init -)"
+#eval "$(nodenv init -)"
 
 stty stop undef
 stty start undef
+
+ source /Users/issei_n/github/www/.docker-lightrc
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
