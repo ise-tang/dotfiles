@@ -41,7 +41,7 @@ call dein#add('tpope/vim-surround')
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-autocmd ColorScheme * highlight lineNr guifg=#b0b0b0
+autocmd ColorScheme * highlight lineNr guifg=#adfa2f
 
 " Required:
 call dein#end()
