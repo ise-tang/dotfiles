@@ -1,6 +1,10 @@
 bindkey -e
 
-autoload -U compinit; compinit
+# Load Git completion
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh/ $fpath)
+
+autoload -Uz compinit && compinit -i
 
 setopt auto_cd
 
@@ -57,7 +61,7 @@ fi
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="${debian_chroot:+($debian_chroot)}%n $ "
+    PS1="${debian_chroot:+($debian_chroot)}%n[%~] $ "
     ;;
 *)
     ;;
